@@ -31,6 +31,8 @@ export const stats = [
 
 export const services = [
   {
+    id: "aparatologia",
+    short: "Aparatología",
     title: "Aparatología Facial & Corporal",
     tag: "Alta tecnología",
     image: "/assets/imagenes/banner-aparatologia.jpg",
@@ -44,6 +46,8 @@ export const services = [
     ],
   },
   {
+    id: "faciales",
+    short: "Faciales",
     title: "Tratamientos Faciales",
     tag: "Luminosidad total",
     image: "/assets/imagenes/banner-faciales.jpg",
@@ -57,6 +61,8 @@ export const services = [
     ],
   },
   {
+    id: "masajes",
+    short: "Masajes",
     title: "Masajes Corporales",
     tag: "Terapia & calma",
     image: "/assets/imagenes/banner-masajes.jpg",
@@ -82,8 +88,8 @@ export const gallery: { src: string; alt: string; span?: "tall" | "wide" }[] = [
 ];
 
 export const promos = [
-  { title: "Promoción 1", text: "Aprovecha", image: "/assets/imagenes/promo-1.jpg" },
-  { title: "Promoción 2", text: "Descuento", image: "/assets/imagenes/promo-2.jpg" },
+  { title: "Promoción 1", text: "Aprovecha nuestra promoción del mes. Pregunta por disponibilidad.", image: "/assets/imagenes/promo-1.jpg" },
+  { title: "Promoción 2", text: "Descuento especial en paquetes seleccionados.", image: "/assets/imagenes/promo-2.jpg" },
 ];
 
 export const testimonials = [
@@ -103,4 +109,10 @@ export const faqs = [
   { q: "¿Qué contraindicaciones tienen los tratamientos con radiofrecuencia?", a: "No se recomienda durante el embarazo, con marcapasos o implantes metálicos en la zona, ni sobre piel lesionada. Lo revisamos contigo antes de empezar." },
   { q: "¿Se pueden combinar servicios faciales y corporales en una sola visita?", a: "Por supuesto. Diseñamos rituales combinados según tu tiempo y objetivos." },
   { q: "¿Qué política de cuidados post-tratamiento manejan?", a: "Al terminar te damos indicaciones personalizadas y damos seguimiento por WhatsApp para resolver cualquier duda." },
+];
+
+export const trust = [
+  "Diagnóstico gratuito",
+  "Protocolos certificados",
+  "Abierto 7 días",
 ];
