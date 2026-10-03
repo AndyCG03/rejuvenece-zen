@@ -71,7 +71,15 @@ export const services = [
   },
 ];
 
-export const gallery = [1, 2, 3, 4, 5, 6].map((n) => `/assets/imagenes/gallery-${n}.jpg`);
+// Orden pensado para la cuadrícula: la vertical ocupa dos filas, la panorámica dos columnas.
+export const gallery: { src: string; alt: string; span?: "tall" | "wide" }[] = [
+  { src: "/assets/imagenes/gallery-1.jpg", alt: "Masaje terapéutico de espalda", span: "tall" },
+  { src: "/assets/imagenes/gallery-2.jpg", alt: "Toallas, aceites y tulipanes" },
+  { src: "/assets/imagenes/gallery-3.jpg", alt: "Aplicación de aceite esencial" },
+  { src: "/assets/imagenes/gallery-5.jpg", alt: "Alberca rodeada de palmeras", span: "wide" },
+  { src: "/assets/imagenes/gallery-4.jpg", alt: "Masaje relajante" },
+  { src: "/assets/imagenes/gallery-6.jpg", alt: "Masaje con piedras calientes" },
+];
 
 export const promos = [
   { title: "Promoción 1", text: "Aprovecha", image: "/assets/imagenes/promo-1.jpg" },

@@ -15,7 +15,8 @@ export default function Home() {
 
       {/* Hero */}
       <section id="inicio" className="hero">
-        <video autoPlay muted loop playsInline preload="auto" aria-hidden>
+        <img className="hero-bg" src="/assets/imagenes/banner-faciales.jpg" alt="" aria-hidden />
+        <video autoPlay muted loop playsInline preload="auto" aria-hidden poster="/assets/imagenes/banner-faciales.jpg">
           <source src="/assets/video/hero.mp4" type="video/mp4" />
         </video>
         <div className="container hero-content">
@@ -104,9 +105,9 @@ export default function Home() {
             <h2 className="title">Momentos que definen nuestro <em>Spa</em></h2>
           </Reveal>
           <div className="gallery">
-            {gallery.map((src, i) => (
-              <Reveal key={src} delay={i * 80} className="frame-wrap" as="div">
-                <Photo src={src} alt={`Galería ${i + 1}`} />
+            {gallery.map((g, i) => (
+              <Reveal key={g.src} delay={i * 80} className={g.span ?? ""}>
+                <Photo src={g.src} alt={g.alt} />
               </Reveal>
             ))}
           </div>
@@ -197,7 +198,7 @@ export default function Home() {
       <footer className="footer">
         <div className="container footer-grid">
           <div>
-            <span className="footer-logo"><img src="/assets/imagenes/logo.webp" alt={site.name} /></span>
+            <span className="footer-logo"><img src="/assets/imagenes/logo-horizontal.png" alt={site.name} /></span>
             <p className="footer-tagline">Un ritual donde la tecnología y la calma se abrazan.</p>
           </div>
           <div>

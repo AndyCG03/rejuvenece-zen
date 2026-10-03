@@ -16,7 +16,7 @@ export default function Header() {
       <header className={`header ${scrolled ? "scrolled" : ""}`}>
         <div className="container header-inner">
           <a href="#inicio" className="logo-chip" aria-label={site.name}>
-            <img src="/assets/imagenes/logo.webp" alt={site.name} />
+            <img src="/assets/imagenes/logo-horizontal.png" alt={site.name} />
           </a>
           <nav className="nav">
             {nav.map((l) => (

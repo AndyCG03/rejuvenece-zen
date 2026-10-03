@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: "Rejuvenece Zen Spa · Donde la tecnología encuentra tu esencia",
   description:
     "Spa en el Centro Histórico de la CDMX. Aparatología, faciales y masajes que fusionan innovación y terapia manual.",
-  icons: { icon: "/assets/imagenes/logo.webp" },
+  icons: { icon: "/assets/imagenes/logo-cuadrado.png" },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
