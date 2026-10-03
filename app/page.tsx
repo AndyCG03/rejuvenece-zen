@@ -19,7 +19,6 @@ export default function Home() {
         <div className="container hero-grid">
           <div className="hero-copy">
             <Reveal>
-              <span className="pill"><b>★</b>Centro Histórico · CDMX</span>
               <h1 className="h1">Donde la <em>tecnología</em> encuentra tu esencia.</h1>
               <p className="lead">
                 Un refugio de bienestar en el corazón del Centro Histórico. Rituales que fusionan innovación y terapia manual, personalizados tras un diagnóstico gratuito.

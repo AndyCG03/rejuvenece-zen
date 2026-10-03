@@ -10,6 +10,14 @@ export const metadata: Metadata = {
   description:
     "Spa en el Centro Histórico de la CDMX. Aparatología, tratamientos faciales y masajes que fusionan innovación y terapia manual. Diagnóstico gratuito.",
   icons: { icon: "/assets/imagenes/logo-cuadrado.png" },
+  openGraph: {
+    title: "Rejuvenece Zen Spa",
+    description: "Bienestar y tecnología en el Centro Histórico de la CDMX. Agenda tu cita por WhatsApp.",
+    locale: "es_MX",
+    type: "website",
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Rejuvenece Zen Spa" }],
+  },
+  twitter: { card: "summary_large_image", images: ["/og.png"] },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
