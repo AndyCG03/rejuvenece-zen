@@ -18,6 +18,7 @@ export const nav = [
   { href: "#inicio", label: "Inicio" },
   { href: "#nosotros", label: "Nosotros" },
   { href: "#servicios", label: "Servicios" },
+  { href: "#reservar", label: "Reservar" },
   { href: "#faq", label: "FAQ" },
   { href: "#ubicacion", label: "Ubicación" },
 ];

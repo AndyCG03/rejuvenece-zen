@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { services, site } from "@/lib/content";
+import { services } from "@/lib/content";
 import { Arrow } from "./icons";
 
 export default function Services() {
@@ -30,7 +30,7 @@ export default function Services() {
               <li key={name}><b>{name}</b><span>{desc}</span></li>
             ))}
           </ul>
-          <a href={site.whatsappHref} target="_blank" rel="noopener noreferrer" className="link">Consultar disponibilidad <Arrow /></a>
+          <a href="#reservar" className="link">Ver horarios disponibles <Arrow /></a>
         </div>
       </div>
     </>

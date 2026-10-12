@@ -44,7 +44,7 @@ export default function Header() {
           </nav>
           <div className="nav-actions">
             <a href={site.phoneHref} className="nav-phone"><Phone />{site.phone}</a>
-            <a href={site.whatsappHref} target="_blank" rel="noopener noreferrer" className="btn btn-primary">Agenda tu cita</a>
+            <a href="#reservar" className="btn btn-primary">Agenda tu cita</a>
             <button className="burger" aria-label={open ? "Cerrar menú" : "Abrir menú"} aria-expanded={open} onClick={() => setOpen(!open)}>
               {open ? <Close /> : <Menu />}
             </button>
@@ -55,7 +55,7 @@ export default function Header() {
         {nav.map((l) => (
           <a key={l.href} href={l.href} onClick={() => setOpen(false)}>{l.label}</a>
         ))}
-        <a href={site.whatsappHref} target="_blank" rel="noopener noreferrer" className="btn btn-primary">Agenda tu cita por WhatsApp</a>
+        <a href="#reservar" className="btn btn-primary" onClick={() => setOpen(false)}>Agenda tu cita</a>
         <a href={site.phoneHref} className="btn btn-outline">Llamar al {site.phone}</a>
       </div>
     </>

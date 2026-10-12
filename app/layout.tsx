@@ -5,7 +5,10 @@ import "./globals.css";
 const display = Fraunces({ subsets: ["latin"], weight: ["300", "400", "500"], style: ["normal", "italic"], variable: "--font-display" });
 const body = Manrope({ subsets: ["latin"], weight: ["400", "500", "600"], variable: "--font-body" });
 
+const host = process.env.VERCEL_PROJECT_PRODUCTION_URL ?? "rejuvenece-zen.vercel.app";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(`https://${host}`),
   title: "Rejuvenece Zen Spa · Bienestar y tecnología en el Centro Histórico CDMX",
   description:
     "Spa en el Centro Histórico de la CDMX. Aparatología, tratamientos faciales y masajes que fusionan innovación y terapia manual. Diagnóstico gratuito.",

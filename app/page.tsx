@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import Reveal from "@/components/Reveal";
 import Counter from "@/components/Counter";
 import Services from "@/components/Services";
+import Booking from "@/components/Booking";
 import Gallery from "@/components/Gallery";
 import Testimonials from "@/components/Testimonials";
 import Faq from "@/components/Faq";
@@ -24,8 +25,8 @@ export default function Home() {
                 Un refugio de bienestar en el corazón del Centro Histórico. Rituales que fusionan innovación y terapia manual, personalizados tras un diagnóstico gratuito.
               </p>
               <div className="hero-cta">
-                <a href={site.whatsappHref} target="_blank" rel="noopener noreferrer" className="btn btn-primary"><WhatsApp size={18} />Agenda tu cita</a>
-                <a href="#servicios" className="btn btn-outline">Ver servicios</a>
+                <a href="#reservar" className="btn btn-primary">Reserva en línea</a>
+                <a href={site.whatsappHref} target="_blank" rel="noopener noreferrer" className="btn btn-outline"><WhatsApp size={18} />WhatsApp</a>
               </div>
               <ul className="trust">
                 {trust.map((t) => <li key={t}><Check />{t}</li>)}
@@ -99,8 +100,22 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Reservar */}
+      <section id="reservar" className="section tint">
+        <div className="container">
+          <Reveal className="head center">
+            <span className="eyebrow">Reserva en línea</span>
+            <h2 className="h2">Agenda tu cita en <em>tres pasos</em></h2>
+            <p className="lead">Elige tu tratamiento, el día y la hora que te acomoden. Te confirmamos por WhatsApp.</p>
+          </Reveal>
+          <Reveal delay={100}>
+            <Booking />
+          </Reveal>
+        </div>
+      </section>
+
       {/* Galería */}
-      <section className="section tint">
+      <section className="section">
         <div className="container">
           <Reveal className="head split">
             <div>
@@ -116,7 +131,7 @@ export default function Home() {
       </section>
 
       {/* Promociones */}
-      <section className="section">
+      <section className="section tint">
         <div className="container">
           <Reveal className="head">
             <span className="eyebrow">Promociones</span>
@@ -141,7 +156,7 @@ export default function Home() {
       </section>
 
       {/* Testimonios */}
-      <section className="section tint">
+      <section className="section">
         <div className="container testi">
           <Reveal>
             <span className="eyebrow">Testimonios</span>
@@ -161,7 +176,7 @@ export default function Home() {
       </section>
 
       {/* FAQ */}
-      <section id="faq" className="section">
+      <section id="faq" className="section tint">
         <div className="container faq">
           <Reveal>
             <span className="eyebrow">Preguntas frecuentes</span>
@@ -178,7 +193,7 @@ export default function Home() {
       </section>
 
       {/* Ubicación */}
-      <section id="ubicacion" className="section tint">
+      <section id="ubicacion" className="section">
         <div className="container">
           <Reveal className="head center">
             <span className="eyebrow">Visítanos</span>
