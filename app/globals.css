@@ -101,13 +101,13 @@ p { margin: 0; }
 @keyframes float { 50% { transform: translateY(-8px); } }
 @media (max-width: 960px) {
   .hero-grid { grid-template-columns: 1fr; }
-  .hero-media { max-width: 520px; width: 100%; margin-inline: auto; }
+  .hero-media { max-width: 520px; width: 100%; margin-inline: auto; order: -1; }
   .hero-thumb { left: -.75rem; }
   .hero-badge { right: -.5rem; }
 }
 @media (max-width: 520px) {
   .hero-frame { aspect-ratio: 1; border-radius: 22px; }
-  .hero-thumb { width: 36%; bottom: -1.25rem; border-width: 4px; }
+  .hero-thumb { width: 34%; bottom: 1rem; left: .75rem; border-width: 4px; }
   .hero-badge { top: auto; bottom: 1rem; right: .75rem; padding: .7rem .9rem; }
   .hero-cta .btn { flex: 1 1 100%; }
 }
