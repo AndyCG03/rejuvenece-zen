@@ -17,42 +17,28 @@ export default function Home() {
 
       {/* Inicio */}
       <section id="inicio" className="hero">
-        <div className="container hero-grid">
-          <div className="hero-copy">
-            <Reveal>
-              <h1 className="h1">Donde la <em>tecnología</em> encuentra tu esencia.</h1>
-              <p className="lead">
-                Un refugio de bienestar en el corazón del Centro Histórico. Rituales que fusionan innovación y terapia manual, personalizados tras un diagnóstico gratuito.
-              </p>
-              <div className="hero-cta">
-                <a href="#reservar" className="btn btn-primary">Reserva en línea</a>
-                <a href={site.whatsappHref} target="_blank" rel="noopener noreferrer" className="btn btn-outline"><WhatsApp size={18} />WhatsApp</a>
-              </div>
-              <ul className="trust">
-                {trust.map((t) => <li key={t}><Check />{t}</li>)}
-              </ul>
-            </Reveal>
+        <div className="hero-video">
+          <video autoPlay muted loop playsInline poster="/assets/video/hero-poster.jpg" aria-hidden>
+            <source src="/assets/video/hero.mp4" type="video/mp4" />
+          </video>
+          <div className="hero-content container">
+            <p className="hero-eyebrow fade-up" style={{ ["--d" as string]: "100ms" }}>Rejuvenece · Zen · Spa</p>
+            <h1 className="h1 fade-up" style={{ ["--d" as string]: "250ms" }}>Donde la <em>tecnología</em> encuentra tu esencia.</h1>
+            <p className="lead fade-up" style={{ ["--d" as string]: "450ms" }}>
+              Un refugio de bienestar en el corazón del Centro Histórico de la CDMX. Rituales que fusionan innovación y terapia manual.
+            </p>
+            <div className="hero-cta fade-up" style={{ ["--d" as string]: "650ms" }}>
+              <a href="#reservar" className="btn btn-primary">Reserva en línea</a>
+              <a href={site.whatsappHref} target="_blank" rel="noopener noreferrer" className="btn btn-glass"><WhatsApp size={18} />WhatsApp</a>
+            </div>
+            <ul className="trust fade-up" style={{ ["--d" as string]: "850ms" }}>
+              {trust.map((t) => <li key={t}><Check />{t}</li>)}
+            </ul>
           </div>
-          <Reveal className="hero-media" delay={120}>
-            <div className="hero-frame">
-              <video autoPlay muted loop playsInline poster="/assets/imagenes/banner-faciales.jpg" aria-hidden>
-                <source src="/assets/video/hero.mp4" type="video/mp4" />
-              </video>
-            </div>
-            <div className="hero-thumb">
-              <img src="/assets/imagenes/detalle-piedras.jpg" alt="Masaje con piedras calientes" />
-            </div>
-            <div className="hero-badge float">
-              <div>
-                <strong>+500</strong>
-                <span>clientas felices</span>
-              </div>
-              <span className="stars" aria-label="5 de 5 estrellas">★★★★★</span>
-            </div>
-          </Reveal>
+          <a href="#nosotros" className="scroll-cue" aria-label="Descubre más" />
         </div>
 
-        <div className="container" style={{ marginTop: "clamp(3rem, 6vw, 5rem)" }}>
+        <div className="container">
           <div className="stats">
             {stats.map((s) => (
               <div className="stat" key={s.label}>
