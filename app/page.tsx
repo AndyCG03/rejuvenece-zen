@@ -92,7 +92,7 @@ export default function Home() {
           <Reveal className="head center">
             <span className="eyebrow">Nuestros servicios</span>
             <h2 className="h2">Un catálogo pensado para tu <em>bienestar</em> integral</h2>
-            <p className="lead">Elige una categoría. Cada tratamiento se personaliza tras un diagnóstico gratuito.</p>
+            <p className="lead">Cada tratamiento se personaliza tras un diagnóstico gratuito con nuestras especialistas.</p>
           </Reveal>
           <Reveal delay={100}>
             <Services />
