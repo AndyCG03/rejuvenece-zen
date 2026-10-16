@@ -470,3 +470,18 @@ p { margin: 0; }
   .scroll-cue { display: none; }
 }
 @media (prefers-reduced-motion: reduce) { .fade-up { opacity: 1; transform: none; } }
+
+/* Booking: paso final obligatorio por WhatsApp */
+.bk-finish { list-style: none; margin: 0 0 .5rem; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: .5rem 1.5rem; font-size: .875rem; font-weight: 600; color: var(--muted); }
+.bk-finish li { display: inline-flex; align-items: center; gap: .5rem; }
+.bk-finish span { display: grid; place-items: center; width: 26px; height: 26px; border-radius: 50%; border: 1px solid var(--line); font-size: .75rem; }
+.bk-finish .done { color: var(--green); }
+.bk-finish .done span { background: var(--sage); border-color: transparent; }
+.bk-finish .current { color: var(--ink); }
+.bk-finish .current span { background: var(--green); border-color: var(--green); color: #fff; }
+.bk-required { display: grid; gap: .3rem; max-width: 30rem; padding: 1rem 1.25rem; border-radius: 16px; background: #fbf1dc; color: #6d4f17; text-align: left; font-size: .9375rem; }
+.bk-required b { color: #5a3f0f; }
+.btn-xl { min-height: 56px; padding: 1rem 2rem; font-size: 1rem; }
+.pulse { animation: wa-pulse 2.2s var(--ease) infinite; }
+@keyframes wa-pulse { 0% { box-shadow: 0 0 0 0 rgba(63, 95, 59, .45); } 70% { box-shadow: 0 0 0 14px rgba(63, 95, 59, 0); } 100% { box-shadow: 0 0 0 0 rgba(63, 95, 59, 0); } }
+@media (max-width: 520px) { .bk-actions .btn { width: 100%; } }

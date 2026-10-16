@@ -22,7 +22,8 @@ export default function Booking() {
   const [view, setView] = useState<{ y: number; m: number } | null>(null);
   const [sending, setSending] = useState(false);
   const [error, setError] = useState("");
-  const [done, setDone] = useState<{ name: string } | null>(null);
+  const [done, setDone] = useState<{ name: string; id?: number } | null>(null);
+  const [notified, setNotified] = useState(false);
   const [refresh, setRefresh] = useState(0);
 
   useEffect(() => {
@@ -79,11 +80,12 @@ export default function Booking() {
       if (res?.status === 409) { setStep(1); setRefresh((n) => n + 1); }
       return;
     }
-    setDone({ name: String(f.name) });
+    setNotified(false);
+    setDone({ name: String(f.name), id: data?.id });
   }
 
   const summary = service && date && start !== null ? `${service.name} · ${longDate(date)} · ${fmtTime(start)} h` : "";
-  const waText = summary && done ? encodeURIComponent(`Hola, soy ${done.name}. Acabo de solicitar una cita en la web: ${summary}.`) : "";
+  const waText = summary && done ? encodeURIComponent(`Hola, soy ${done.name}. Acabo de reservar en la web${done.id ? ` (folio #${done.id})` : ""}: ${summary}. Quedo atenta a la confirmación.`) : "";
 
   if (loadError) {
     return (
@@ -95,16 +97,31 @@ export default function Booking() {
   }
 
   if (done) {
+    const reset = () => { setDone(null); setStep(0); setService(null); setDate(null); setStart(null); };
     return (
       <div className="bk bk-state fade-in">
-        <span className="bk-ok"><Check /></span>
-        <h3>¡Listo, {done.name.split(" ")[0]}! Recibimos tu solicitud.</h3>
-        <p className="bk-summary">{summary}</p>
-        <p>Tu cita queda <b>pendiente de confirmación</b>. Te escribiremos por WhatsApp para confirmarla.</p>
+        <ol className="bk-finish" aria-label="Pasos finales">
+          <li className="done"><span><Check /></span>Solicitud registrada</li>
+          <li className={notified ? "done" : "current"}><span>{notified ? <Check /> : 2}</span>Avísanos por WhatsApp</li>
+        </ol>
+        <h3>{notified ? `¡Gracias, ${done.name.split(" ")[0]}!` : `Último paso, ${done.name.split(" ")[0]}`}</h3>
+        <p className="bk-summary">{summary}{done.id ? ` · Folio #${done.id}` : ""}</p>
+        {notified ? (
+          <p>Recibimos tu aviso. Te confirmaremos la cita por WhatsApp en breve.</p>
+        ) : (
+          <div className="bk-required" role="alert">
+            <b>Tu cita aún no está apartada.</b>
+            <span>Para confirmarla es <b>obligatorio</b> enviarnos el mensaje por WhatsApp. Ya está escrito, solo pulsa enviar.</span>
+          </div>
+        )}
         <div className="bk-actions">
-          <a href={`https://wa.me/525620049792?text=${waText}`} target="_blank" rel="noopener noreferrer" className="btn btn-primary"><WhatsApp size={18} />Avisar por WhatsApp</a>
-          <button className="btn btn-outline" onClick={() => { setDone(null); setStep(0); setService(null); setDate(null); setStart(null); }}>Agendar otra cita</button>
+          <a href={`https://wa.me/525620049792?text=${waText}`} target="_blank" rel="noopener noreferrer"
+            className={`btn btn-primary ${notified ? "" : "btn-xl pulse"}`} onClick={() => setNotified(true)}>
+            <WhatsApp size={20} />{notified ? "Abrir WhatsApp de nuevo" : "Enviar aviso por WhatsApp"}
+          </a>
+          {notified && <button className="btn btn-outline" onClick={reset}>Agendar otra cita</button>}
         </div>
+        {!notified && <small className="muted">WhatsApp {site.whatsapp}</small>}
       </div>
     );
   }
