@@ -14,7 +14,7 @@ async function getClient(): Promise<Query> {
     const sql = neon(url);
     client = (text, params = []) => sql.query(text, params) as never;
   } else {
-    if (process.env.VERCEL) throw new Error("Falta DATABASE_URL: conecta la base de Neon al proyecto en Vercel.");
+    if (process.env.NODE_ENV === "production") throw new Error("Falta DATABASE_URL: configura la conexión a Neon en el hosting.");
     const { PGlite } = await import("@electric-sql/pglite");
     const db = new PGlite(process.env.PGLITE_DIR ?? "./.pglite");
     client = async (text, params = []) => (await db.query(text, params)).rows as never;
