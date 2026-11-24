@@ -1,11 +1,13 @@
-const waText = encodeURIComponent("Hola, quiero más información de la página Rejuvenece Zen.");
+// Todo el sitio contacta por WhatsApp: cambia aquí el número (con 52 de México) si cambia.
+export const WHATSAPP_NUMBER = "525620049792";
+export const waLink = (text: string) => `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
 
 export const site = {
   name: "Rejuvenece Zen Spa",
   phone: "55 5161 6896",
   phoneHref: "tel:5551616896",
   whatsapp: "56 2004 9792",
-  whatsappHref: `https://wa.me/525620049792?text=${waText}`,
+  whatsappHref: waLink("Hola, quiero más información de la página Rejuvenece Zen."),
   email: "hola@rejuvenecezenspa.mx",
   address: "Luis Moya 51, Colonia Centro, Cuauhtémoc, 06000 Ciudad de México, CDMX",
   hours: "Lun a Sáb · 10:00 — 20:00 · Dom con cita",
@@ -117,3 +119,20 @@ export const trust = [
   "Protocolos certificados",
   "Abierto 7 días",
 ];
+
+// Reserva por WhatsApp: horario de atención y duración aproximada de cada servicio.
+// Solo orientan a la clienta; la cita se confirma por WhatsApp.
+export const booking = {
+  timeZone: "America/Mexico_City",
+  openDays: [1, 2, 3, 4, 5, 6], // 0 = domingo (con cita, se pide por WhatsApp)
+  openMin: 10 * 60,
+  closeMin: 20 * 60,
+  stepMin: 30,
+  leadMin: 120, // anticipación mínima el mismo día
+  horizonDays: 60,
+  durations: {
+    EMSZERO: 30, Radiofrecuencia: 45, "Cavitación Ultrasónica": 45, Presoterapia: 40,
+    Hydrafacial: 60, "Peeling Químico": 45, Dermapen: 60, "Masaje Kobido": 60,
+    "Masaje Terapéutico": 60, "Piedras Calientes": 75, Aromaterapia: 60, "Drenaje Linfático": 60,
+  } as Record<string, number>,
+};

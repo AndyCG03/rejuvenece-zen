@@ -28,7 +28,7 @@ export default function Home() {
               Un refugio de bienestar en el corazón del Centro Histórico de la CDMX. Rituales que fusionan innovación y terapia manual.
             </p>
             <div className="hero-cta fade-up" style={{ ["--d" as string]: "650ms" }}>
-              <a href="#reservar" className="btn btn-primary">Reserva en línea</a>
+              <a href="#reservar" className="btn btn-primary">Reserva tu cita</a>
               <a href={site.whatsappHref} target="_blank" rel="noopener noreferrer" className="btn btn-glass"><WhatsApp size={18} />WhatsApp</a>
             </div>
             <ul className="trust fade-up" style={{ ["--d" as string]: "850ms" }}>
@@ -90,7 +90,7 @@ export default function Home() {
       <section id="reservar" className="section tint">
         <div className="container">
           <Reveal className="head center">
-            <span className="eyebrow">Reserva en línea</span>
+            <span className="eyebrow">Reserva tu cita</span>
             <h2 className="h2">Agenda tu cita en <em>tres pasos</em></h2>
             <p className="lead">Elige tu tratamiento, el día y la hora que te acomoden. Te confirmamos por WhatsApp.</p>
           </Reveal>

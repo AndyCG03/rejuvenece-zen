@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import { Fraunces, Manrope } from "next/font/google";
 import "./globals.css";
+import Loader from "@/components/Loader";
 
 const display = Fraunces({ subsets: ["latin"], weight: ["300", "400", "500"], style: ["normal", "italic"], variable: "--font-display" });
 const body = Manrope({ subsets: ["latin"], weight: ["400", "500", "600"], variable: "--font-body" });
 
-// SITE_URL (p. ej. https://rejuvenecezen.com) define el dominio de las vistas previas al compartir.
-const siteUrl = process.env.SITE_URL ?? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL ?? "rejuvenece-zen.vercel.app"}`;
+// Dominio público: define las vistas previas al compartir el enlace.
+const siteUrl = "https://rejuvenecezen.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -27,7 +28,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="es" className={`${display.variable} ${body.variable}`}>
-      <body>{children}</body>
+      <body>
+        <Loader />
+        {children}
+      </body>
     </html>
   );
 }
